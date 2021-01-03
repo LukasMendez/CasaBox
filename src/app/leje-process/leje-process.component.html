@@ -1,0 +1,57 @@
+<div class="container inside">
+    <h1>Udfyld oplysningerne nedenfor</h1>
+
+    <h3>Valgt box: {{boxNummer}}</h3>
+
+    <form [formGroup]="purchaseForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="fullName">Fulde navn</label>
+          <input type="text" formControlName="fullName" class="form-control" [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.fullName.errors }" placeholder="Full name" />
+          <div *ngIf="submitted && purchaseForm.controls.fullName.errors" class="invalid-feedback" >
+              <div *ngIf="purchaseForm.controls.fullName.errors.required">First Name is required</div>
+              <div *ngIf="purchaseForm.controls.fullName.errors.minlength">Full Name should be at least 2 characters long.</div> <!-- Added min lenght-->
+              <div *ngIf="purchaseForm.controls.fullName.errors.pattern">
+                First Name must begin with a capital letter and other letters must be small.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" formControlName="username" class="form-control" placeholder="Enter Username" [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.username.errors }"   />
+            <div *ngIf="submitted && purchaseForm.controls.username.errors" class="invalid-feedback">
+                <div *ngIf="purchaseForm.controls.username.errors.required">Username is required</div>
+                <div *ngIf="purchaseForm.controls.username.errors.minlength">Username should be at least 2 characters long</div>
+                <div *ngIf="purchaseForm.controls.username.errors.pattern">
+                 Username must begin with a capital letter and other letters must be small.
+              </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" formControlName="password" class="form-control" placeholder="Enter Password" [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.password.errors }"  />
+            <div *ngIf="submitted && purchaseForm.controls.password.errors" class="invalid-feedback">
+                <div *ngIf="purchaseForm.controls.password.errors.required">Password is required</div>
+                <div *ngIf="purchaseForm.controls.password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+        </div>
+        <div class="form-group">
+          <h6 for="tlCheckbox">Are you a Team Leader?:</h6>
+          <input type="checkbox" formControlName="isTeamLeader" class="form-control move-left" style="margin: 0px;"/>
+        </div>
+        <div class="form-group">
+          <div *ngIf="purchaseForm.controls.isTeamLeader.value==true">
+            <label for="teamName">Teamname:</label>
+            <input type="text" formControlName="team" class="form-control" placeholder="Enter the name of your new team:" [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.team.errors }" />
+            <div *ngIf="submitted && purchaseForm.controls.team.errors" class="invalid-feedback">
+                <div *ngIf="purchaseForm.controls.team.errors.required">Teamname is required</div>
+                <div *ngIf="purchaseForm.controls.team.errors.minlength">Team name must be at least 6 characters</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <!-- <button [disabled]="loading" class="btn btn-primary">Register</button> -->
+            <!-- <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" /> -->
+            <!-- <a routerLink="/login-form" class="btn btn-link">Cancel</a> -->
+        </div>
+    </form>
+</div>

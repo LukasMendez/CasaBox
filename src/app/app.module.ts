@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { SalgLejeComponent } from './salg-leje/salg-leje.component';
 import { KontorLejeComponent } from './kontor-leje/kontor-leje.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LejeProcessComponent } from './leje-process/leje-process.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +27,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HvemViErComponent,
     SalgLejeComponent,
     KontorLejeComponent,
-    KontaktComponent
+    KontaktComponent,
+    LejeProcessComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

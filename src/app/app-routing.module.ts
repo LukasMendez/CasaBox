@@ -8,6 +8,7 @@ import { HvemViErComponent } from './hvem-vi-er/hvem-vi-er.component';
 import { SalgLejeComponent } from './salg-leje/salg-leje.component';
 import { KontorLejeComponent } from './kontor-leje/kontor-leje.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
+import { LejeProcessComponent } from './leje-process/leje-process.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'salg-leje',        component: SalgLejeComponent },
   { path: 'lej-et-kontor',        component: KontorLejeComponent },
   { path: 'kontakt',        component: KontaktComponent },  
+  { path: 'online-booking',   component: LejeProcessComponent }
 ];
 
 @NgModule({

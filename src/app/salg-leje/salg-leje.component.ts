@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CasaBox, CasaBoxType } from '../models/casa-box';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-salg-leje',
@@ -9,7 +10,7 @@ import { CasaBox, CasaBoxType } from '../models/casa-box';
 
 export class SalgLejeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   public casaBoxes: Array<CasaBox>;
   public casaBoxesAvailable: Array<CasaBox>;
@@ -170,6 +171,15 @@ export class SalgLejeComponent implements OnInit {
         break;
       }
     }
+  }
+
+  purchase(boxNummer: number){
+    this.router.navigate(['/online-booking'], {
+      queryParams: {
+        boxNummer: boxNummer
+      },
+      queryParamsHandling: 'merge',
+    });
   }
 }
 

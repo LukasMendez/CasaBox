@@ -56,7 +56,8 @@
                             <label>{{box.pris}} kr.</label>
                             <br>
                             <p style="font-style: italic;">Ledig</p>
-                            <input type="button" class="btn btn-secondary" value="Klik for at bestille">
+                            <input type="button" class="btn btn-secondary" value="Klik for at bestille" (click)="purchase(box.boxNummer)">
+                            <!-- <input type="button" class="btn btn-secondary" value="Klik for at bestille" [routerLink]="['/online-booking', box.boxNummer]"> -->
                         </div>
                     </div>
                 </div>
