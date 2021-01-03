@@ -1,0 +1,83 @@
+<div class="container inside">
+    <h1 class="-lineBelow center">Sådan bestiller du et depotrum</h1>
+    <div class="infoBox">
+        <h4>Du kan bestille dit depotrum:</h4>
+        <ul>
+            <li>via vores <a href="kontakt-os.html">mailformular</a></li>
+            <li>direkte via mail på&nbsp;<a href="mailto:info@casabox.dk">info@casabox.dk</a></li>
+            <li>pr. post til CasaBox, Sjællandsgade 26, 6400 Sønderborg</li>
+            <li>ved henvendelse på tlf. 22 40 60 64</li>
+            <li><b>Nyhed!</b> Bestil via vores hjemmeside. Vi tager imod Visa/Dankort, Mastercard og MobilePay</li>
+        </ul>
+    </div>
+    <div class="center distant-top">
+    <h3>Online bestilling / Oversigt</h3>
+        <mat-form-field appearance="fill" style="padding: 1vw">
+            <mat-label>Visning</mat-label>
+            <mat-select [(value)]="selectedDisplayOption">
+                <mat-option value="Ledige" (click)="showAvailable()">Ledige</mat-option>
+                <mat-option value="Optaget" (click)="showOccupied()">Optaget</mat-option>
+                <mat-option value="Alle" (click)="showAll()">Alle</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="padding: 1vw">
+            <mat-label>Sortér efter</mat-label>
+            <mat-select [(value)]="selectedFilter">
+                <!-- <mat-option value="Ledige" (click)="showAvailable()">Ledige</mat-option>
+              <mat-option value="Optaget" (click)="showOccupied()">Optaget</mat-option> -->
+                <mat-option value="Nummer - stigende" (click)="orderByNumberAscending()">Nummer - stigende</mat-option>
+                <mat-option value="Nummer - faldende" (click)="orderByNumberDescending()">Nummer - faldende</mat-option>
+                <mat-option value="Pris - stigende" (click)="orderByPriceAscending()">Pris - stigende</mat-option>
+                <mat-option value="Pris - faldende" (click)="orderByPriceDescending()">Pris - faldende</mat-option>
+                <mat-option value="Størrelse - stigende" (click)="orderBySizeAscending()">Størrelse - stigende
+                </mat-option>
+                <mat-option value="Størrelse - faldende" (click)="orderBySizeDescending()">Størrelse - faldende
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center">
+        <div *ngFor="let box of casaBoxesFiltered">
+            <div class="col-sm3">
+                <div *ngIf="box.ledig == true">
+                    <div class="casaBox-common casaBox-available">
+                        <div>
+                            <label style="font-weight: bold;">CasaBox nummer:&nbsp;</label>
+                            <label>{{box.boxNummer}}</label>
+                            <br>
+                            <label style="font-weight: bold;">Størrelse:&nbsp;</label>
+                            <label>{{box.m2}} m2 / {{box.m3}} m3</label>
+                            <br>
+                            <label style="font-weight: bold;">Type:&nbsp;</label>
+                            <label>{{CasaBoxType[box.type]}}</label>
+                            <br>
+                            <label style="font-weight: bold;">Pris:&nbsp;</label>
+                            <label>{{box.pris}} kr.</label>
+                            <br>
+                            <p style="font-style: italic;">Ledig</p>
+                            <input type="button" class="btn btn-secondary" value="Klik for at bestille">
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="box.ledig == false">
+                    <div class="casaBox-common casaBox-occupied">
+                        <label style="font-weight: bold;">CasaBox nummer:&nbsp;</label>
+                        <label>{{box.boxNummer}}</label>
+                        <br>
+                        <label style="font-weight: bold;">Størrelse:&nbsp;</label>
+                        <label>{{box.m2}} m2 / {{box.m3}} m3</label>
+                        <br>
+                        <label style="font-weight: bold;">Type:&nbsp;</label>
+                        <label>{{CasaBoxType[box.type]}}</label>
+                        <br>
+                        <label style="font-weight: bold;">Pris:&nbsp;</label>
+                        <label>{{box.pris}} kr.</label>
+                        <br>
+                        <p style="font-style: italic;">Ikke ledig</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

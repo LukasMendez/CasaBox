@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400&display=swap');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.inside{
+    margin-top: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 70px;
+}
+
+.base-color{
+    background-color: #a72314 !important;
+}
+
+// footer{
+//     position: fixed;;
+//     bottom:0px;
+//     width:100%;
+//     }
+
+.center{
+    text-align: center;
+}
+
+.distant-top{
+    margin-top: 5%;
+}
+
+.-lineBelow::after{
+content: "";
+display: block;
+border: none;
+width: 60px;
+height: 2px;
+margin: 1.15rem auto 1.4rem;
+background: #a72314;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
