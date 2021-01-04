@@ -14,26 +14,35 @@ export class LejeProcessComponent implements OnInit {
     private route: ActivatedRoute,
     private formBuilder: FormBuilder
   ) { }
+  
   public purchaseForm: FormGroup;
   public boxNummer: number;
+  public loading = false;
   submitted = false;
 
   ngOnInit(): void {
     this.boxNummer = -1;
     this.route.queryParams.subscribe(params => {
       this.boxNummer = params['boxNummer'];
+
+      // Check if this number exist or is available with the API
+
+      // If not return to the previous page or show an error
+
     });
 
     this.purchaseForm = this.formBuilder.group({
-      fullName: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^([A-Z][a-z]*((\\s[A-Za-z])?[a-z]*)*)$')]],
-      username: ['', [Validators.required, Validators.minLength(2)]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      isTeamLeader: [''],
-      team: ['', [Validators.minLength(6)]]
+      fuldeNavn: ['', [Validators.required, Validators.minLength(4), Validators.pattern('^[æøåa-zÆØÅA-Z]{2,}(?: [æøåa-zÆØÅA-Z]+){0,4}$')]],
+      emailAdresse: ['', [Validators.required, Validators.minLength(6), Validators.email]],
+      telefonNummer: ['', [Validators.required, Validators.minLength(8), Validators.pattern('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$')]],
+      adresse: ['', [Validators.required, Validators.minLength(5), Validators.pattern('^[æøåa-zÆØÅA-Z0-9.]{2,}(?: [æøåa-zÆØÅA-Z0-9.]+){0,4}$')]],
+      postNummer: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern('^[0-9]+$')]],
+      by: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[ÆØÅæøåA-Za-z]*$')]]
     });
   }
 
   onSubmit(){
+    this.submitted = true;
 
   }
 
