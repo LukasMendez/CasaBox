@@ -5,70 +5,85 @@
 
     <form class="distant-top" [formGroup]="purchaseForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label>Fulde navn</label>
-          <input type="text" formControlName="fuldeNavn" class="form-control" [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.fuldeNavn.errors }" placeholder="Indtast dit fulde navn" />
-          <div *ngIf="submitted && purchaseForm.controls.fuldeNavn.errors" class="invalid-feedback" >
-              <div *ngIf="purchaseForm.controls.fuldeNavn.errors.required">Dette felt er påkrævet</div>
-              <div *ngIf="purchaseForm.controls.fuldeNavn.errors.minlength">Indtast mere end 3 tegn</div> <!-- Added min lenght-->
-              <div *ngIf="purchaseForm.controls.fuldeNavn.errors.pattern">
-                Feltet indeholder ugyldige tegn
+            <label>Fulde navn</label>
+            <input type="text" formControlName="fuldeNavn" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.fuldeNavn.errors }"
+                placeholder="Indtast dit fulde navn" />
+            <div *ngIf="submitted && purchaseForm.controls.fuldeNavn.errors" class="invalid-feedback">
+                <div *ngIf="purchaseForm.controls.fuldeNavn.errors.required">Dette felt er påkrævet</div>
+                <div *ngIf="purchaseForm.controls.fuldeNavn.errors.minlength">Indtast mere end 3 tegn</div>
+                <!-- Added min lenght-->
+                <div *ngIf="purchaseForm.controls.fuldeNavn.errors.pattern">
+                    Feltet indeholder ugyldige tegn
+                </div>
             </div>
-          </div>
         </div>
         <div class="form-group">
             <label>E-mail adresse</label>
-            <input type="text" formControlName="emailAdresse" class="form-control" placeholder="Indtast din e-mail adresse" [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.emailAdresse.errors }"   />
+            <input type="text" formControlName="emailAdresse" class="form-control"
+                placeholder="Indtast din e-mail adresse"
+                [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.emailAdresse.errors }" />
             <div *ngIf="submitted && purchaseForm.controls.emailAdresse.errors" class="invalid-feedback">
                 <div *ngIf="purchaseForm.controls.emailAdresse.errors.required">Dette felt er påkrævet</div>
                 <div *ngIf="purchaseForm.controls.emailAdresse.errors.minlength">Indtast mere end 5 tegn</div>
                 <div *ngIf="purchaseForm.controls.emailAdresse.errors.pattern">
-                 E-mail adressen indeholder ugyldige tegn
-              </div>
+                    E-mail adressen indeholder ugyldige tegn
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label>Telefonnummer</label>
-            <input type="text" formControlName="telefonNummer" class="form-control" placeholder="Indtast dit telefonnummer" [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.telefonNummer.errors }"   />
+            <input type="text" formControlName="telefonNummer" class="form-control"
+                placeholder="Indtast dit telefonnummer"
+                [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.telefonNummer.errors }" />
             <div *ngIf="submitted && purchaseForm.controls.telefonNummer.errors" class="invalid-feedback">
                 <div *ngIf="purchaseForm.controls.telefonNummer.errors.required">Dette felt er påkrævet</div>
                 <div *ngIf="purchaseForm.controls.telefonNummer.errors.minlength">Indtast mere end 7 tegn</div>
                 <div *ngIf="purchaseForm.controls.telefonNummer.errors.pattern">
-                 Telefonnummeret indeholder ugyldige tegn
-              </div>
+                    Telefonnummeret indeholder ugyldige tegn
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label>Adresse</label>
-            <input type="text" formControlName="adresse" class="form-control" placeholder="Indtast din adresse" [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.adresse.errors }"   />
+            <input type="text" formControlName="adresse" class="form-control" placeholder="Indtast din adresse"
+                [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.adresse.errors }" />
             <div *ngIf="submitted && purchaseForm.controls.adresse.errors" class="invalid-feedback">
                 <div *ngIf="purchaseForm.controls.adresse.errors.required">Dette felt er påkrævet</div>
                 <div *ngIf="purchaseForm.controls.adresse.errors.minlength">Indtast mere end 4 tegn</div>
                 <div *ngIf="purchaseForm.controls.adresse.errors.pattern">
-                 Adressen indeholder ugyldige tegn
-              </div>
+                    Adressen indeholder ugyldige tegn
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label>Postnummer</label>
-            <input maxlength="4" type="text" formControlName="postNummer" class="form-control" placeholder="Indtast dit postnummer" [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.postNummer.errors }"   />
+            <input maxlength="4" type="text" formControlName="postNummer" class="form-control"
+                placeholder="Indtast dit postnummer"
+                [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.postNummer.errors }" />
             <div *ngIf="submitted && purchaseForm.controls.postNummer.errors" class="invalid-feedback">
                 <div *ngIf="purchaseForm.controls.postNummer.errors.required">Dette felt er påkrævet</div>
                 <div *ngIf="purchaseForm.controls.postNummer.errors.minlength">Indtast venligst 4 tal</div>
                 <div *ngIf="purchaseForm.controls.postNummer.errors.pattern">
-                 Postnummeret indeholder ugyldige tegn
-              </div>
+                    Postnummeret indeholder ugyldige tegn
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label>By</label>
-            <input type="text" formControlName="by" class="form-control" placeholder="Indtast din by" [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.by.errors }"   />
+            <input type="text" formControlName="by" class="form-control" placeholder="Indtast din by"
+                [ngClass]="{ 'is-invalid': submitted && purchaseForm.controls.by.errors }" />
             <div *ngIf="submitted && purchaseForm.controls.by.errors" class="invalid-feedback">
                 <div *ngIf="purchaseForm.controls.by.errors.required">Dette felt er påkrævet</div>
                 <div *ngIf="purchaseForm.controls.by.errors.minlength">Indtast mere end 2 tegn</div>
                 <div *ngIf="purchaseForm.controls.by.errors.pattern">
-                 Byen indeholder ugyldige tegn
-              </div>
+                    Byen indeholder ugyldige tegn
+                </div>
             </div>
+        </div>
+        <div class="form-group">
+            <re-captcha (resolved)="resolved($event)" formControlName="recaptchaReactive" siteKey="6Lf1nSAaAAAAANC8iao_RCoUJPske8rzz3-zy32Z">
+            </re-captcha>
         </div>
         <div class="form-group">
             <button type="submit" [disabled]="loading" class="btn btn-primary">Bestil</button>

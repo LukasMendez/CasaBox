@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
+import { HttpClientModule } from '@angular/common/http'; 
+
 import { AppComponent } from './app.component';
 import { HjemComponent } from './hjem/hjem.component';
 import { OpbevaringComponent } from './opbevaring/opbevaring.component';
@@ -37,7 +39,10 @@ import { LejeProcessComponent } from './leje-process/leje-process.component';
     BrowserAnimationsModule,
     MatSelectModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
