@@ -1,3 +1,26 @@
 .ng-invalid:not(form):not(re-captcha) { /* invalid input*/
     border-left: 5px solid #a94442; 
   }
+
+.box-overview{
+  width: 100%;
+  margin: auto;
+  border-top-color: gray;
+  
+}
+
+.box-overview tr td:last-of-type {
+  text-align: right;
+  }
+
+.booking__confirm__overview {
+  border-bottom: 1px solid rgb(200, 200, 200);
+  border-top: 1px solid rgb(200, 200, 200);
+  padding:15px 0;
+}
+
+.checkbox-container{
+  background-color: rgb(45, 51, 51);
+  color: whitesmoke;
+  padding: 5%;
+}

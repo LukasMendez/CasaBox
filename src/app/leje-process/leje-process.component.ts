@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AppService } from '../services/app.service';
+import { CasaBox, CasaBoxType } from '../models/casa-box';
 
 @Component({
   selector: 'app-leje-process',
@@ -21,6 +22,7 @@ export class LejeProcessComponent implements OnInit {
   public boxNummer: number;
   public loading = false;
   submitted = false;
+  public casaBox: CasaBox
 
   ngOnInit(): void {
     this.boxNummer = -1;
@@ -31,6 +33,9 @@ export class LejeProcessComponent implements OnInit {
 
       // If not return to the previous page or show an error
 
+      // If success, initialize the CasaBox object
+      this.casaBox = {boxNummer:this.boxNummer, type:CasaBoxType.Depotrum, m2:4,m3:6,beskrivelse:'',ledig:true,pris:250}
+
     });
 
     this.purchaseForm = this.formBuilder.group({
@@ -40,7 +45,8 @@ export class LejeProcessComponent implements OnInit {
       adresse: ['', [Validators.required, Validators.minLength(5), Validators.pattern('^[æøåa-zÆØÅA-Z0-9.]{2,}(?: [æøåa-zÆØÅA-Z0-9.]+){0,4}$')]],
       postNummer: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern('^[0-9]+$')]],
       by: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[ÆØÅæøåA-Za-z]*$')]],
-      recaptchaReactive: [null, Validators.required]
+      recaptchaReactive: [null, Validators.required],
+      lejevilkår: [false, Validators.requiredTrue]
     });
 
     // this.captchaComponent.captchaEndpoint = 
