@@ -18,6 +18,7 @@ import { KontorLejeComponent } from './kontor-leje/kontor-leje.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LejeProcessComponent } from './leje-process/leje-process.component';
+import { UdlejningComponent } from './udlejning/udlejning.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LejeProcessComponent } from './leje-process/leje-process.component';
     SalgLejeComponent,
     KontorLejeComponent,
     KontaktComponent,
-    LejeProcessComponent
+    LejeProcessComponent,
+    UdlejningComponent
   ],
   imports: [
     BrowserModule,

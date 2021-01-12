@@ -9,6 +9,7 @@ import { SalgLejeComponent } from './salg-leje/salg-leje.component';
 import { KontorLejeComponent } from './kontor-leje/kontor-leje.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { LejeProcessComponent } from './leje-process/leje-process.component';
+import { UdlejningComponent } from './udlejning/udlejning.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'sikkerhed',        component: SikkerhedComponent },
   { path: 'hvem-er-casabox',        component: HvemViErComponent },
   { path: 'salg-leje',        component: SalgLejeComponent },
+  { path: 'udlejning',        component: UdlejningComponent },
   { path: 'lej-et-kontor',        component: KontorLejeComponent },
   { path: 'kontakt',        component: KontaktComponent },  
   { path: 'online-booking',   component: LejeProcessComponent }
