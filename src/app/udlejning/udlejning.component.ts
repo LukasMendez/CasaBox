@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-udlejning',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UdlejningComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
+  public boxSize
   ngOnInit(): void {
   }
+
+  purchase(boxNummer: number){
+    this.router.navigate(['/online-booking'], {
+      queryParams: {
+        boxNummer: boxNummer
+      },
+      queryParamsHandling: 'merge',
+    });
+  }
+
 
 }

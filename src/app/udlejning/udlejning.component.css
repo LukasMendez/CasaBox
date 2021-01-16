@@ -44,7 +44,7 @@
   }
 
   .casaBox-img-fill{
-      object-fit: cover; object-position: 0px 80%;
+      object-fit: cover; object-position: 50% 80%;
       position: absolute;
       height: 100%;
       width: 100%;
