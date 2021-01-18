@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AppService } from '../services/app.service';
 import { CasaBox, CasaBoxType } from '../models/casa-box';
+import { CasaboxService } from '../services/casabox.service';
+import { CasaBoxVariantDto } from '../models/casa-box-variant-dto';
 
 @Component({
   selector: 'app-leje-process',
@@ -15,28 +17,39 @@ export class LejeProcessComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private service: AppService
+    private appService: AppService,
+    private casaBoxService: CasaboxService,
+    private router: Router
   ) { }
 
   public purchaseForm: FormGroup;
-  public boxNummer: number;
+  // CasaBox
+  public m2: number;
+  public m3: number;
+  public type: string;
+  public pris: number;
+
+  public available: Boolean; // <<-- TODO see if we need these last five variables
+
+  public casaBoxVariantDto : CasaBoxVariantDto;
+
   public loading = false;
   submitted = false;
   public casaBox: CasaBox
 
   ngOnInit(): void {
-    this.boxNummer = -1;
-    this.route.queryParams.subscribe(params => {
-      this.boxNummer = params['boxNummer'];
-
-      // Check if this number exist or is available with the API
-
-      // If not return to the previous page or show an error
-
-      // If success, initialize the CasaBox object
-      this.casaBox = {boxNummer:this.boxNummer, type:CasaBoxType.Depotrum, m2:4,m3:6,beskrivelse:'',ledig:true,pris:250}
-
-    });
+    this.casaBoxService.GetSelectedCasaBoxVariant().subscribe(
+      data => {
+        this.casaBoxVariantDto = data; 
+      },
+      error => {
+        this.router.navigate(['/hjem']);
+        console.log(error);
+      }
+    )
+    if(this.casaBoxVariantDto == undefined){
+      this.router.navigate(['/hjem']);
+    }
 
     this.purchaseForm = this.formBuilder.group({
       fuldeNavn: ['', [Validators.required, Validators.minLength(4), Validators.pattern('^[æøåa-zÆØÅA-Z]{2,}(?: [æøåa-zÆØÅA-Z]+){0,4}$')]],
@@ -70,7 +83,7 @@ export class LejeProcessComponent implements OnInit {
   //function to send the token to the node server
   sendTokenToBackend(token: string) {
     //calling the service and passing the token to the service
-    this.service.sendToken(token).subscribe(
+    this.appService.sendToken(token).subscribe(
       data => {
         console.log(data)
       },

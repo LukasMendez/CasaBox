@@ -1,4 +1,4 @@
-<div class="container inside">
+<div *ngIf="casaBoxVariantDto.ledig" class="container inside">
     <h1>Udfyld oplysningerne nedenfor</h1>
 
     <form [formGroup]="purchaseForm" (ngSubmit)="onSubmit()">
@@ -93,24 +93,23 @@
                             <table class="box-overview">
                                 <tbody>
                                     <tr>
-                                        <td>CasaBox nummer</td>
-                                        <td>{{casaBox.boxNummer}}</td>
-                                    </tr>
-                                    <tr>
                                         <td>Type</td>
-                                        <td>{{casaBox.type}}</td>
+                                        <td>{{casaBoxVariantDto.type}}</td>
                                     </tr>
                                     <tr>
                                         <td>Størrelse</td>
-                                        <td>{{casaBox.m2}}m2/{{casaBox.m3}}m3</td>
+                                        <td>{{casaBoxVariantDto.m2}}m2/{{casaBoxVariantDto.m3}}m3</td>
                                     </tr>
                                     <tr class="booking__confirm__overview">
                                         <td>Pris pr. måned</td>
-                                        <td>{{casaBox.pris}} DKK</td>
+                                        <td>{{casaBoxVariantDto.pris}} DKK</td>
                                     </tr>
-                                    <footer *ngIf="casaBox.beskrivelse !== undefined && casaBox.beskrivelse.length > 2"
-                                        class="blockquote-footer">Someone famous in <cite title="Source Title">Source
-                                            Title</cite></footer>
+                                    <footer *ngIf="casaBoxVariantDto.beskrivelse !== undefined"
+                                        class="blockquote-footer">Notat: 
+                                        <cite *ngIf="casaBoxVariantDto.beskrivelse.length > 2" title="Note">
+                                            {{casaBoxVariantDto.beskrivelse}}
+                                            </cite>
+                                        </footer>
                                 </tbody>
                             </table>
                         </div>
@@ -140,4 +139,7 @@
         </div>
     </form>
 
+</div>
+<div class="container inside" *ngIf="!casaBoxVariantDto.ledig" >
+    Beklager, men der er desværre ikke flere ledige CasaBoxes af den valgte type. 
 </div>
