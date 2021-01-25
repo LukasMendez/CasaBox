@@ -28,12 +28,23 @@
                         </div>
                     </div>
                     <div class="casabox-short-desc">
-                        <p class="card-text"><b>Størrelse: </b> 4m2 / 10m3 <span class="tab"></span><b>Pris:</b> 380 kr.
-                        </p>
+                            <p class="card-text"><b>Størrelse: </b> 4m2 / 10m3 
+                                <span class="tab"></span>
+                                <b>Pris:</b> 380 kr.
+                                <span 
+                                [matTooltip]="allCasaBoxVariantsDto[0].antalLedige + ' ledige depotrum'" 
+                                matTooltipPosition="right"
+                                [ngClass]="allCasaBoxVariantsDto[0].antalLedige > 0 ? 'available' : 'not-available'">
+                                    <i class="tab fas fa-dot-circle"></i>
+                                  </span>
+                                  {{allCasaBoxVariantsDto[0].antalLedige}}
+                            </p>
+                            
                     </div>
                 </a>
             </div>
         </div>
+
         <div class="col-md-6 col-lg-4 d-flex">
             <div class="casaBox-common">
                 <a (click)="purchase(5.2,13,'Depotrum')">
@@ -44,7 +55,16 @@
                         </div>
                     </div>
                     <div class="casabox-short-desc">
-                        <p class="card-text"><b>Størrelse: </b> 5.2m2 / 13m3 <span class="tab"></span><b>Pris:</b> 480 kr.
+                        <p class="card-text"><b>Størrelse: </b> 5.2m2 / 13m3 
+                            <span class="tab"></span>
+                            <b>Pris:</b> 480 kr.
+                            <span 
+                            [matTooltip]="allCasaBoxVariantsDto[1].antalLedige + ' ledige depotrum'" 
+                            matTooltipPosition="right"
+                            [ngClass]="allCasaBoxVariantsDto[1].antalLedige > 0 ? 'available' : 'not-available'">
+                                <i class="tab fas fa-dot-circle"></i>
+                              </span>
+                              {{allCasaBoxVariantsDto[1].antalLedige}}
                         </p>
                     </div>
                 </a>
@@ -60,7 +80,17 @@
                         </div>
                     </div>
                     <div class="casabox-short-desc">
-                        <p class="card-text"><b>Størrelse: </b> 7.75m2 / 18.5m3 <span class="tab"></span><b>Pris:</b> 580 kr.
+                        <p class="card-text">
+                            <b>Størrelse: </b> 7.75m2 / 18.5m3 
+                            <span class="tab"></span>
+                            <b>Pris:</b> 580 kr.
+                            <span 
+                            [matTooltip]="allCasaBoxVariantsDto[2].antalLedige + ' ledige depotrum'" 
+                            matTooltipPosition="right"
+                            [ngClass]="allCasaBoxVariantsDto[2].antalLedige > 0 ? 'available' : 'not-available'">
+                                <i class="tab fas fa-dot-circle"></i>
+                              </span>
+                              {{allCasaBoxVariantsDto[2].antalLedige}}
                         </p>
                     </div>
                 </a>
@@ -76,7 +106,17 @@
                         </div>
                     </div>
                     <div class="casabox-short-desc">
-                        <p class="card-text"><b>Størrelse: </b> 9.45m2 / 23.7m3 <span class="tab"></span><b>Pris:</b> 680 kr.
+                        <p class="card-text">
+                            <b>Størrelse: </b> 9.45m2 / 23.7m3 
+                            <span class="tab"></span>
+                            <b>Pris:</b> 680 kr.
+                            <span 
+                            [matTooltip]="allCasaBoxVariantsDto[3].antalLedige + ' ledige depotrum'" 
+                            matTooltipPosition="right"
+                            [ngClass]="allCasaBoxVariantsDto[3].antalLedige > 0 ? 'available' : 'not-available'">
+                                <i class="tab fas fa-dot-circle"></i>
+                              </span>
+                              {{allCasaBoxVariantsDto[3].antalLedige}}
                         </p>
                     </div>
                 </a>
@@ -92,7 +132,17 @@
                         </div>
                     </div>
                     <div class="casabox-short-desc">
-                        <p class="card-text"><b>Størrelse: </b> 12.6m2 / 31.5m3 <span class="tab"></span><b>Pris:</b> 780 kr.
+                        <p class="card-text">
+                            <b>Størrelse: </b> 12.6m2 / 31.5m3 
+                            <span class="tab"></span>
+                            <b>Pris:</b> 780 kr.
+                            <span 
+                            [matTooltip]="allCasaBoxVariantsDto[4].antalLedige + ' ledige depotrum'" 
+                            matTooltipPosition="right"
+                            [ngClass]="allCasaBoxVariantsDto[4].antalLedige > 0 ? 'available' : 'not-available'">
+                                <i class="tab fas fa-dot-circle"></i>
+                              </span>
+                              {{allCasaBoxVariantsDto[4].antalLedige}}
                         </p>
                     </div>
                 </a>
@@ -108,7 +158,17 @@
                         </div>
                     </div>
                     <div class="casabox-short-desc">
-                        <p class="card-text"><b>Størrelse: </b> 17m2 / 51m3 <span class="tab"></span><b>Pris:</b> 1200 kr.
+                        <p class="card-text">
+                            <b>Størrelse: </b> 17m2 / 51m3 
+                            <span class="tab"></span>
+                            <b>Pris:</b> 1200 kr.
+                            <span 
+                            [matTooltip]="allCasaBoxVariantsDto[5].antalLedige + ' ledige depotrum'" 
+                            matTooltipPosition="right"
+                            [ngClass]="allCasaBoxVariantsDto[5].antalLedige > 0 ? 'available' : 'not-available'">
+                                <i class="tab fas fa-dot-circle"></i>
+                              </span>
+                              {{allCasaBoxVariantsDto[5].antalLedige}}
                         </p>
                     </div>
                 </a>
@@ -124,7 +184,17 @@
                         </div>
                     </div>
                     <div class="casabox-short-desc">
-                        <p class="card-text"><b>Størrelse: </b> 21m2 <span class="tab"></span><b>Pris:</b> 550 kr.
+                        <p class="card-text">
+                            <b>Størrelse: </b> 21m2 
+                            <span class="tab"></span>
+                            <b>Pris:</b> 550 kr.
+                            <span 
+                            [matTooltip]="allCasaBoxVariantsDto[6].antalLedige + ' ledige garager'" 
+                            matTooltipPosition="right"
+                            [ngClass]="allCasaBoxVariantsDto[6].antalLedige > 0 ? 'available' : 'not-available'">
+                                <i class="tab fas fa-dot-circle"></i>
+                              </span>
+                              {{allCasaBoxVariantsDto[6].antalLedige}}
                         </p>
                     </div>
                 </a>

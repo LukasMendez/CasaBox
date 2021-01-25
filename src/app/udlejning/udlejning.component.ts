@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CasaBoxVariantDto } from '../models/casa-box-variant-dto';
 import { CasaboxService } from '../services/casabox.service';
 
 @Component({
@@ -9,12 +10,21 @@ import { CasaboxService } from '../services/casabox.service';
 })
 export class UdlejningComponent implements OnInit {
 
+  public allCasaBoxVariantsDto: CasaBoxVariantDto[];
+
   constructor(
     private router: Router,
     private casaBoxService: CasaboxService
   ) { }
 
   ngOnInit(): void {
+    this.casaBoxService.GetCasaBoxVariants().subscribe(
+      data => {
+        if(data) {
+          this.allCasaBoxVariantsDto = data;
+        }
+      }
+    )
   }
 
   purchase(m2: number, m3: number, type: string) {

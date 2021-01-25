@@ -68,3 +68,13 @@
       font-size: 1.6vh;
       height: 20%;
   }
+
+  .not-available{
+    font-size: small;
+    color: red;
+  }
+
+  .available{
+      font-size: small;
+      color: green;
+  }

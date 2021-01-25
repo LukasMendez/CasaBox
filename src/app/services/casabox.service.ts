@@ -13,10 +13,12 @@ export class CasaboxService {
   private casaBoxes: BehaviorSubject<CasaBox[]>;
 
   private selectedCasaboxVariant: BehaviorSubject<CasaBoxVariantDto>;
+  private allCasaBoxVariants: BehaviorSubject<CasaBoxVariantDto[]>;
 
   constructor(private http: HttpClient) {
     this.casaBoxes = new BehaviorSubject<CasaBox[]>([]);
     this.selectedCasaboxVariant = new BehaviorSubject<CasaBoxVariantDto>(null);
+    this.allCasaBoxVariants = new BehaviorSubject<CasaBoxVariantDto[]>(null);
   }
 
   /**
@@ -69,8 +71,11 @@ export class CasaboxService {
     params = params.append('m3', m3.toString());
     params = params.append('type', type);
 
-
     return this.http.get<CasaBoxVariantDto>(environment.casaBoxApi + "/api/CasaBoxVariant/ByIds", { params: params });
+  }
+
+  public GetCasaBoxVariants(): Observable<CasaBoxVariantDto[]> {
+    return this.http.get<CasaBoxVariantDto[]>(environment.casaBoxApi + "/api/CasaBoxVariant");
   }
 
   public SetSelectedCasaBoxVariant(casaboxVariant: CasaBoxVariantDto){

@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { HttpClientModule } from '@angular/common/http'; 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppComponent } from './app.component';
 import { HjemComponent } from './hjem/hjem.component';
@@ -44,7 +46,9 @@ import { UdlejningComponent } from './udlejning/udlejning.component';
     ReactiveFormsModule,
     RecaptchaModule,
     RecaptchaFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

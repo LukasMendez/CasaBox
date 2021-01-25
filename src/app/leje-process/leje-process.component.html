@@ -1,4 +1,4 @@
-<div *ngIf="casaBoxVariantDto.ledig" class="container inside">
+<div *ngIf="casaBoxVariantDto.antalLedige > 0" class="container inside">
     <h1>Udfyld oplysningerne nedenfor</h1>
 
     <form [formGroup]="purchaseForm" (ngSubmit)="onSubmit()">
@@ -140,6 +140,6 @@
     </form>
 
 </div>
-<div class="container inside" *ngIf="!casaBoxVariantDto.ledig" >
+<div class="container inside" *ngIf="0 == casaBoxVariantDto.antalLedige" >
     Beklager, men der er desværre ikke flere ledige CasaBoxes af den valgte type. 
 </div>
