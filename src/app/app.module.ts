@@ -21,6 +21,7 @@ import { KontaktComponent } from './kontakt/kontakt.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LejeProcessComponent } from './leje-process/leje-process.component';
 import { UdlejningComponent } from './udlejning/udlejning.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UdlejningComponent } from './udlejning/udlejning.component';
     KontorLejeComponent,
     KontaktComponent,
     LejeProcessComponent,
-    UdlejningComponent
+    UdlejningComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

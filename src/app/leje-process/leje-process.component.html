@@ -1,3 +1,4 @@
+
 <div *ngIf="casaBoxVariantDto.antalLedige > 0" class="container inside">
     <h1>Udfyld oplysningerne nedenfor</h1>
 
@@ -106,7 +107,7 @@
                                     </tr>
                                     <footer *ngIf="casaBoxVariantDto.beskrivelse !== undefined"
                                         class="blockquote-footer">Notat: 
-                                        <cite *ngIf="casaBoxVariantDto.beskrivelse.length > 2" title="Note">
+                                        <cite title="Note">
                                             {{casaBoxVariantDto.beskrivelse}}
                                             </cite>
                                         </footer>

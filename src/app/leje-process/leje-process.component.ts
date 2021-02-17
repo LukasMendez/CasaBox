@@ -38,6 +38,8 @@ export class LejeProcessComponent implements OnInit {
   public casaBox: CasaBox
 
   ngOnInit(): void {
+    this.casaBoxVariantDto = { m2:0, m3:0, pris:0, type:'', antalLedige: 0, beskrivelse: ''}
+
     this.casaBoxService.GetSelectedCasaBoxVariant().subscribe(
       data => {
         this.casaBoxVariantDto = data; 
@@ -93,5 +95,7 @@ export class LejeProcessComponent implements OnInit {
       () => { }
     );
   }
+
+  
 
 }
