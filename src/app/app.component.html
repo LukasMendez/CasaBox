@@ -1,136 +1,78 @@
-<!--Navbar-->
-<div></div>
-<mdb-navbar SideClass="navbar navbar-expand-xl navbar-dark indigo base-color" >
+<div *ngIf='currentUser'>
+  <app-authenticated>
+  </app-authenticated>
+</div>
+<div *ngIf='!currentUser'>
+  <app-public>
+  </app-public>
+</div>
 
-  <!-- Navbar brand -->
-  <mdb-navbar-brand style="margin-right: 3rem;"> 
-    <a class="navbar-brand" href="#"><img src="https://i.imgur.com/LKTYEJV.png" width="100px"></a>
-  </mdb-navbar-brand>  
-  <!-- Collapsible content -->
-  <links>
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/opbevaring" routerLinkActive="active">
-          Opbevaring<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/box-stoerelser" routerLinkActive="active">
-          Box størrelser<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/sikkerhed" routerLinkActive="active">
-          Sikkerhed<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/hvem-er-casabox" routerLinkActive="active">
-          Hvem er CasaBox?<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/salg-leje" routerLinkActive="active">
-          Salg/leje<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/udlejning" routerLinkActive="active">
-          Udlejning<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/lej-et-kontor" routerLinkActive="active">
-          Lej et kontor<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/kontakt" routerLinkActive="active">
-          Kontakt os<span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-    <!-- Links -->
-    <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item">
-        <a class="nav-link" href="https://www.facebook.com/micasalux.dk" target="_blank">
-          <mdb-icon fab icon="facebook">
-          </mdb-icon>
-          Følg os på Facebook
-        </a>
-      </li>
-    </ul>
-
-  </links>
-  <!-- Collapsible content -->
-
-</mdb-navbar>
-<!--/.Navbar-->
-
-<!--<Alert> Will show an alert message if one exists-->
-  <section>
-    <router-outlet></router-outlet>
-  </section>
-
-<!-- Footer -->
-<footer class="page-footer font-small bg-dark pt-4 mt-auto">
-
-  <!-- Footer Links -->
-  <div class="container-fluid text-center text-md-left">
-
-    <!-- Grid row -->
-    <div class="row">
-
-      <!-- Grid column -->
-      <div class="col-md-6 mt-md-0 mt-3">
-
-        <!-- Content -->
-        <h5 class="text-uppercase">CasaBox</h5>
-        <p>Sjællandsgade 26 - 6400 Sønderborg - Tlf. 22 40 60 64 - CVR nr. 19 02 30 44</p>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none pb-3">
-
-      <!-- Grid column -->
-      <div class="col-md-3 mb-md-0 mb-3">
-
-          <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Kontakt</a>
-            </li>
-
-          </ul>
-
+  <!-- Footer -->
+  <footer class="page-footer font-small bg-dark pt-4 mt-auto">
+  
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+  
+          <!-- Content -->
+          <h5 class="text-uppercase">CasaBox</h5>
+          <p>Sjællandsgade 26 - 6400 Sønderborg - Tlf. 22 40 60 64 - CVR nr. 19 02 30 44</p>
+  
         </div>
         <!-- Grid column -->
-
+  
+        <hr class="clearfix w-100 d-md-none pb-3">
+  
         <!-- Grid column -->
         <div class="col-md-3 mb-md-0 mb-3">
-
-          <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">MiCasaLux</a>
-            </li>
-            <li>
-              <a href="#!">Admin login</a>
-            </li>
-          </ul>
-
-        </div>
-        <!-- Grid column -->
-
+  
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+  
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Kontakt</a>
+              </li>
+  
+            </ul>
+  
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+  
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+  
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">MiCasaLux</a>
+              </li>
+              <li>
+                <a href="/admin-login">Admin login</a>
+              </li>
+            </ul>
+  
+          </div>
+          <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
     </div>
-    <!-- Grid row -->
-
-  </div>
-  <!-- Footer Links -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2021 Copyright:
-    <a href="https://mdbootstrap.com/"> MiCasaLux</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
+    <!-- Footer Links -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+      <a href="https://mdbootstrap.com/"> MiCasaLux</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->

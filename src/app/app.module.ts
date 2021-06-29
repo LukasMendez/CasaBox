@@ -5,7 +5,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
@@ -22,6 +22,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LejeProcessComponent } from './leje-process/leje-process.component';
 import { UdlejningComponent } from './udlejning/udlejning.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { PublicComponent } from './main-layouts/public/public.component';
+import { AuthenticatedComponent } from './main-layouts/authenticated/authenticated.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { JwtInterceptor, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { ErrorInterceptor } from './helpers/error-interceptor';
+import { JwtHelperService } from '@auth0/angular-jwt'
 
 @NgModule({
   declarations: [
@@ -36,7 +42,10 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     KontaktComponent,
     LejeProcessComponent,
     UdlejningComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    PublicComponent,
+    AuthenticatedComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +61,13 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     FontAwesomeModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

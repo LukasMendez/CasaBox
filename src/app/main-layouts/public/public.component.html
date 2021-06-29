@@ -1,0 +1,66 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-xl navbar-dark indigo base-color" >
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand style="margin-right: 3rem;"> 
+      <a class="navbar-brand" href="#"><img src="https://i.imgur.com/LKTYEJV.png" width="100px"></a>
+    </mdb-navbar-brand>  
+    <!-- Collapsible content -->
+    <links>
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/opbevaring" routerLinkActive="active">
+            Opbevaring<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/box-stoerelser" routerLinkActive="active">
+            Box størrelser<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/sikkerhed" routerLinkActive="active">
+            Sikkerhed<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/hvem-er-casabox" routerLinkActive="active">
+            Hvem er CasaBox?<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/salg-leje" routerLinkActive="active">
+            Salg/leje<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/udlejning" routerLinkActive="active">
+            Udlejning<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/lej-et-kontor" routerLinkActive="active">
+            Lej et kontor<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/kontakt" routerLinkActive="active">
+            Kontakt os<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <!-- Links -->
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.facebook.com/micasalux.dk" target="_blank">
+            <mdb-icon fab icon="facebook">
+            </mdb-icon>
+            Følg os på Facebook
+          </a>
+        </li>
+      </ul>
+  
+    </links>
+    <!-- Collapsible content -->
+  
+  </mdb-navbar>
+  <!--/.Navbar-->
+  
+  <!--<Alert> Will show an alert message if one exists-->
+    <section>
+      <router-outlet></router-outlet>
+    </section>
+  

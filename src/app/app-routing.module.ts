@@ -10,6 +10,9 @@ import { KontorLejeComponent } from './kontor-leje/kontor-leje.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { LejeProcessComponent } from './leje-process/leje-process.component';
 import { UdlejningComponent } from './udlejning/udlejning.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AuthGuard } from './helpers/auth-guard';
 
 
 const routes: Routes = [
@@ -23,7 +26,9 @@ const routes: Routes = [
   { path: 'udlejning',        component: UdlejningComponent },
   { path: 'lej-et-kontor',        component: KontorLejeComponent },
   { path: 'kontakt',        component: KontaktComponent },  
-  { path: 'online-booking',   component: LejeProcessComponent }
+  { path: 'online-booking',   component: LejeProcessComponent },
+  { path: 'admin-login', component: AdminLoginComponent },
+  { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
