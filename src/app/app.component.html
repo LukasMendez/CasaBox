@@ -1,8 +1,8 @@
-<div *ngIf='currentUser'>
+<div *ngIf='currentUser && isRouteActive()'>
   <app-authenticated>
   </app-authenticated>
 </div>
-<div *ngIf='!currentUser'>
+<div *ngIf='!currentUser || (currentUser && !isRouteActive())'>
   <app-public>
   </app-public>
 </div>

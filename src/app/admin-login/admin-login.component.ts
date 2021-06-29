@@ -22,11 +22,12 @@ export class AdminLoginComponent implements OnInit {
     ) { 
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) { 
-            this.router.navigate(['/']); // TO ADMIN PANEL
+            this.router.navigate(['/admin-dashboard']); // TO ADMIN PANEL
         }
     }
 
     ngOnInit() {
+
         this.loginForm = this.formBuilder.group({
             email: ['', Validators.required],
             password: ['', Validators.required]
@@ -49,7 +50,7 @@ export class AdminLoginComponent implements OnInit {
 
         this.loading = true;
         var authenticateModel = new AuthenticateDto(this.f.email.value, this.f.password.value);
-        
+
         this.authenticationService.login(authenticateModel)
             .pipe(first())
             .subscribe(
